@@ -22,6 +22,9 @@ public class Ksiazka extends Wolumin{
     }
 
     public void setAutor(List<String> autor) {
+        if(autor.isEmpty()){
+            throw new WoluminException("Brak autora książki");
+        }
         this.autor = autor;
     }
 }
