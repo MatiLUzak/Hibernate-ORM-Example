@@ -11,7 +11,7 @@ public class Wypozyczajacy {
     private LocalDate dataUr;
     private String adres;
     private UUID uuid;
-    
+
     public Wypozyczajacy(TypWypozyczajacy typWypozyczajacy, String nazwa, LocalDate dataUr, String adres) {
         if (typWypozyczajacy == null) {
             throw new WypozyczajacyException("Błędny typWypozyczajacy");
