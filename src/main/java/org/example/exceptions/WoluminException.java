@@ -1,4 +1,4 @@
-package org.example.excpetions;
+package org.example.exceptions;
 
 public class WoluminException extends RuntimeException {
     public WoluminException(String message) {

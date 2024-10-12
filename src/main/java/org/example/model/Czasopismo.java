@@ -1,6 +1,6 @@
 package org.example.model;
 
-import org.example.excpetions.WoluminException;
+import org.example.exceptions.WoluminException;
 
 public class Czasopismo extends Wolumin {
     private String nrWydania;

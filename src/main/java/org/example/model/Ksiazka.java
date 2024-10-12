@@ -1,6 +1,6 @@
 package org.example.model;
 
-import org.example.excpetions.WoluminException;
+import org.example.exceptions.WoluminException;
 
 import java.util.List;
 
