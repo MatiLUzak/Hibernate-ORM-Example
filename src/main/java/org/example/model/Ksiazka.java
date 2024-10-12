@@ -10,7 +10,7 @@ public class Ksiazka extends Wolumin{
 
     public Ksiazka(String wydawnictwo, String jezyk, String tytul, List<String> autor) {
         super(wydawnictwo, jezyk, tytul);
-        if(autor.isEmpty()){
+        if(autor==null||autor.isEmpty()){
             throw new WoluminException("Brak autora książki");
         }
         this.autor = autor;
@@ -22,7 +22,7 @@ public class Ksiazka extends Wolumin{
     }
 
     public void setAutor(List<String> autor) {
-        if(autor.isEmpty()){
+        if(autor==null||autor.isEmpty()){
             throw new WoluminException("Brak autora książki");
         }
         this.autor = autor;

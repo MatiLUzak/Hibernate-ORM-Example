@@ -10,10 +10,10 @@ public class Naukowa extends Ksiazka{
 
     public Naukowa(String wydawnictwo, String jezyk, String tytul, List<String> autor, String recenzja, String dział) {
         super(wydawnictwo, jezyk, tytul, autor);
-        if(recenzja.isEmpty()){
+        if(recenzja==null||recenzja.isEmpty()){
             throw  new WoluminException("Recenzja nie moze byc pusta");
         }
-        if(dział.isEmpty()){
+        if(dział==null||dział.isEmpty()){
             throw new WoluminException("Dzial nie moze byc pusty");
         }
         this.recenzja = recenzja;
@@ -30,14 +30,14 @@ public class Naukowa extends Ksiazka{
     }
 
     public void setRecenzja(String recenzja) {
-        if(recenzja.isEmpty()){
+        if(recenzja==null||recenzja.isEmpty()){
             throw new WoluminException("Recenzja nie moze byc pusta");
         }
         this.recenzja = recenzja;
     }
 
     public void setDział(String dział) {
-        if(dział.isEmpty()){
+        if(dział==null||dział.isEmpty()){
             throw new WoluminException("Dzial nie moze byc pusty");
         }
         this.dział = dział;

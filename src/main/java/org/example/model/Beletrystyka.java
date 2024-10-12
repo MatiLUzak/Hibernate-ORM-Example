@@ -10,11 +10,11 @@ public class Beletrystyka extends Ksiazka{
 
     public Beletrystyka(String wydawnictwo, String jezyk, String tytul, List<String> autor, String przedział_wiekowy, String rodzaj) {
         super(wydawnictwo, jezyk, tytul, autor);
-        if(przedział_wiekowy.isEmpty()||przedział_wiekowy==null)
+        if(przedział_wiekowy==null||przedział_wiekowy.isEmpty())
         {
             throw new WoluminException("Przedzial wiekowy nie moze byc pusty");
         }
-        if(rodzaj.isEmpty()||rodzaj==null)
+        if(rodzaj==null||rodzaj.isEmpty())
         {
             throw new WoluminException("Rodzaj nie moze byc pusty");
         }
@@ -32,14 +32,14 @@ public class Beletrystyka extends Ksiazka{
     }
 
     public void setPrzedział_wiekowy(String przedział_wiekowy) {
-        if(przedział_wiekowy.isEmpty()||przedział_wiekowy==null){
+        if(przedział_wiekowy==null||przedział_wiekowy.isEmpty()){
             throw new WoluminException("Przedzial wiekowy nie moze byc pusty");
         }
         this.przedziałWiekowy = przedział_wiekowy;
     }
 
     public void setRodzaj(String rodzaj) {
-        if(rodzaj.isEmpty()||rodzaj==null)
+        if(rodzaj==null||rodzaj.isEmpty())
         {
             throw new WoluminException("Rodzaj nie moze byc pusty");
         }

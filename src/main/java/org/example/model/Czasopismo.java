@@ -7,7 +7,7 @@ public class Czasopismo extends Wolumin {
 
     public Czasopismo(String wydawnictwo, String jezyk, String tytul, String nrWydania) {
         super(wydawnictwo, jezyk, tytul);
-        if(nrWydania.isEmpty())
+        if(nrWydania==null||nrWydania.isEmpty())
         {
             throw new WoluminException("Brak numeru wydania");
         }
@@ -19,7 +19,7 @@ public class Czasopismo extends Wolumin {
     }
 
     public void setNrWydania(String nrWydania) {
-        if(nrWydania.isEmpty()){
+        if(nrWydania==null||nrWydania.isEmpty()){
             throw new WoluminException("Brak numeru wydania");
         }
         this.nrWydania = nrWydania;
