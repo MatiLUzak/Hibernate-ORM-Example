@@ -9,13 +9,13 @@ public class Wolumin {
 
     public Wolumin(String wydawnictwo, String jezyk, String tytul) {
         if(wydawnictwo.isEmpty()){
-            throw new WoluminException("Blendne Wydawnictwo");
+            throw new WoluminException("Błędne Wydawnictwo");
         }
         if(jezyk.isEmpty()){
-            throw new WoluminException("Blendne jezyk");
+            throw new WoluminException("Błędny język");
         }
         if(tytul.isEmpty()){
-            throw new WoluminException("Blendne tytul");
+            throw new WoluminException("Błędny tytuł");
         }
         this.wydawnictwo = wydawnictwo;
         this.jezyk = jezyk;

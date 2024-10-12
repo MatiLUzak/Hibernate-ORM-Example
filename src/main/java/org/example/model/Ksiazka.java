@@ -1,0 +1,27 @@
+package org.example.model;
+
+import org.example.excpetions.WoluminException;
+
+import java.util.List;
+
+public class Ksiazka extends Wolumin{
+
+    private List<String> autor;
+
+    public Ksiazka(String wydawnictwo, String jezyk, String tytul, List<String> autor) {
+        super(wydawnictwo, jezyk, tytul);
+        if(autor.isEmpty()){
+            throw new WoluminException("Brak autora książki");
+        }
+        this.autor = autor;
+
+    }
+
+    public List<String> getAutor() {
+        return autor;
+    }
+
+    public void setAutor(List<String> autor) {
+        this.autor = autor;
+    }
+}
