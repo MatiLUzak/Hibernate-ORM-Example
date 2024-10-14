@@ -16,7 +16,7 @@ public class DockerPostgresConnectionTest {
 
     @BeforeAll
     static void beforeAll() {
-        // Tworzymy EntityManagerFactory na podstawie jednostki trwałości zdefiniowanej w persistence.xml
+        // Test
         emf = Persistence.createEntityManagerFactory("POSTGRES_RENT_PU");
         em = emf.createEntityManager();
     }
