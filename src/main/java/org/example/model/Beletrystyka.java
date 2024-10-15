@@ -1,12 +1,17 @@
 package org.example.model;
 
 import org.example.exceptions.WoluminException;
+import jakarta.persistence.*;
 
 import java.util.List;
 
+@Entity
 public class Beletrystyka extends Ksiazka{
+    @Column(name = "przedzial_wiekowy", nullable = false)
     private String przedziałWiekowy;
+    @Column(name = "rodzaj", nullable = false)
     private String rodzaj;
+    public Beletrystyka() {}
 
     public Beletrystyka(String wydawnictwo, String jezyk, String tytul, List<String> autor, String przedział_wiekowy, String rodzaj) {
         super(wydawnictwo, jezyk, tytul, autor);

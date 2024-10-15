@@ -1,19 +1,34 @@
 package org.example.model;
 
 import org.example.exceptions.WypozyczenieException;
-
+import jakarta.persistence.*;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Entity
 public class Wypozyczenie {
-    private Wypozyczajacy wypozyczajacy;
-    private Wolumin wolumin;
-    private LocalDateTime dataOd;
-    private LocalDateTime dataDo;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID uuid;
 
-    // Konstruktor z walidacją
+    @ManyToOne // Relacja wiele do jednego z Wypozyczajacy
+    @JoinColumn(name = "wypozyczajacy_id", nullable = false)
+    private Wypozyczajacy wypozyczajacy;
+
+    @ManyToOne // Relacja wiele do jednego z Wolumin
+    @JoinColumn(name = "wolumin_id", nullable = false)
+    private Wolumin wolumin;
+
+    @Column(name = "data_od", nullable = false)
+    private LocalDateTime dataOd;
+
+    @Column(name = "data_do")
+    private LocalDateTime dataDo;
+
+    public Wypozyczenie() {
+    }
     public Wypozyczenie(Wypozyczajacy wypozyczajacy, Wolumin wolumin) {
         if (wypozyczajacy == null) {
             throw new WypozyczenieException("Błędny wypożyczający");

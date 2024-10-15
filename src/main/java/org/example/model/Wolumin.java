@@ -1,11 +1,24 @@
 package org.example.model;
 
 import org.example.exceptions.WoluminException;
-
+import jakarta.persistence.*;
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Wolumin {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "wydawnictwo", nullable = false)
     private String wydawnictwo;
+
+    @Column(name = "jezyk", nullable = false)
     private String jezyk;
+
+    @Column(name = "tytul", nullable = false)
     private String tytul;
+
+    public Wolumin() {}
 
     public Wolumin(String wydawnictwo, String jezyk, String tytul) {
         if(wydawnictwo==null||wydawnictwo.isEmpty()){

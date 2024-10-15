@@ -1,12 +1,18 @@
 package org.example.model;
 
 import org.example.exceptions.WoluminException;
-
+import jakarta.persistence.*;
 import java.util.List;
 
+@Entity
 public class Naukowa extends Ksiazka{
+    @Column(name = "recenzja", nullable = false)
     private String recenzja;
+
+    @Column(name = "dzial", nullable = false)
     private String dział;
+
+    public Naukowa() {}
 
     public Naukowa(String wydawnictwo, String jezyk, String tytul, List<String> autor, String recenzja, String dział) {
         super(wydawnictwo, jezyk, tytul, autor);

@@ -1,9 +1,15 @@
 package org.example.model;
 
 import org.example.exceptions.WoluminException;
+import jakarta.persistence.*;
 
+@Entity
 public class Czasopismo extends Wolumin {
+
+    @Column(name = "nr_wydania", nullable = false)
     private String nrWydania;
+
+    public Czasopismo() {}
 
     public Czasopismo(String wydawnictwo, String jezyk, String tytul, String nrWydania) {
         super(wydawnictwo, jezyk, tytul);

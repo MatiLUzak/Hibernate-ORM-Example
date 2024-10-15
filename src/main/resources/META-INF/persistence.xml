@@ -11,6 +11,13 @@
         <class>org.example.model.Uczen</class>
         <class>org.example.model.Nauczyciel</class>
         <class>org.example.model.Pozostali</class>
+        <class>org.example.model.Ksiazka</class>
+        <class>org.example.model.Beletrystyka</class>
+        <class>org.example.model.Czasopismo</class>
+        <class>org.example.model.Naukowa</class>
+        <class>org.example.model.Wolumin</class>
+        <class>org.example.model.Wypozyczajacy</class>
+        <class>org.example.model.Wypozyczenie</class>
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/nbddb"/>
             <property name="jakarta.persistence.jdbc.user" value="nbd"/>

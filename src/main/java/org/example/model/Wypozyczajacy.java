@@ -1,16 +1,31 @@
 package org.example.model;
 
 import org.example.exceptions.WypozyczajacyException;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.UUID;
 
+@Entity
 public class Wypozyczajacy {
-    private TypWypozyczajacy typWypozyczajacy;
-    private String nazwa;
-    private LocalDate dataUr;
-    private String adres;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID uuid;
+
+    @ManyToOne
+    @JoinColumn(name = "typ_wypozyczajacy_id", nullable = false)
+    private TypWypozyczajacy typWypozyczajacy;
+
+    @Column(nullable = false)
+    private String nazwa;
+
+    private LocalDate dataUr;
+
+    @Column(nullable = false)
+    private String adres;
+
+    public Wypozyczajacy() {}
 
     public Wypozyczajacy(TypWypozyczajacy typWypozyczajacy, String nazwa, LocalDate dataUr, String adres) {
         if (typWypozyczajacy == null) {
