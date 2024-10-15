@@ -1,9 +1,15 @@
 package org.example.model;
 
 import org.example.exceptions.WypozyczajacyException;
+import jakarta.persistence.*;
 
+@Entity
 public class Pozostali extends TypWypozyczajacy {
+
+    @Column(name="zawod",nullable=false)
     private String zawod;
+
+    public Pozostali() {}
 
     public Pozostali(double kara, int maxDlWypoz, int maksLKsiazek, String zawod) {
         super(kara, maxDlWypoz, maksLKsiazek);

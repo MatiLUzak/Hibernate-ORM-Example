@@ -1,11 +1,24 @@
 package org.example.model;
 
+import jakarta.persistence.*;
 import org.example.exceptions.WypozyczajacyException;
 
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class TypWypozyczajacy {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name="kara",nullable = false)
     private double kara;
+    @Column(name="max_dl_wypoz",nullable = false)
     private int maxDlWypoz;
+    @Column(name="maks_l_ksiazek",nullable = false)
     private int maksLKsiazek;
+
+    public TypWypozyczajacy() {
+    }
 
     public TypWypozyczajacy(double kara, int maxDlWypoz, int maksLKsiazek) {
         if(kara <0){

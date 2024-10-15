@@ -1,10 +1,16 @@
 package org.example.model;
 
 import org.example.exceptions.WypozyczajacyException;
+import jakarta.persistence.*;
 
+@Entity
 public class Uczen extends TypWypozyczajacy {
+    @Column(name="nr_Semestru", nullable=false)
     private String nrSemestru;
 
+    public Uczen() {
+
+    }
     public Uczen(double kara, int maxDlWypoz, int maksLKsiazek, String nrSemestru) {
         super(kara, maxDlWypoz, maksLKsiazek);
         if (nrSemestru == null || nrSemestru.isEmpty()) {
