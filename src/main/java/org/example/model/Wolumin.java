@@ -4,7 +4,7 @@ import org.example.exceptions.WoluminException;
 import jakarta.persistence.*;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Wolumin {
+public class Wolumin  extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

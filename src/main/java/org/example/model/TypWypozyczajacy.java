@@ -5,7 +5,7 @@ import org.example.exceptions.WypozyczajacyException;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public class TypWypozyczajacy {
+public class TypWypozyczajacy extends AbstractEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

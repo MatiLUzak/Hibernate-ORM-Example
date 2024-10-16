@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-public class Wypozyczenie {
+public class Wypozyczenie extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
