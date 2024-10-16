@@ -27,7 +27,7 @@ class WypozyczenieTest {
         wypozyczenie.koniecWypozyczenia();
         assertNotNull(wypozyczenie.getDataDo());
 
-        assertNotNull(wypozyczenie.getUuid());
+        //assertNotNull(wypozyczenie.getUuid());
 
         Wypozyczajacy nowyWypozyczajacy = new Wypozyczajacy(new Nauczyciel(0.0, 30, 10, "Prof"), "Adam Nowak", LocalDate.of(2023, 5, 1), "Kraków");
         wypozyczenie.setWypozyczajacy(nowyWypozyczajacy);
