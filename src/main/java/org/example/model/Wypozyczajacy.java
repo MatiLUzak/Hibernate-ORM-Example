@@ -42,7 +42,7 @@ public class Wypozyczajacy extends AbstractEntity {
         this.nazwa = nazwa;
         this.dataUr = dataUr;
         this.adres = adres;
-        this.uuid = UUID.randomUUID();
+        //this.uuid = UUID.randomUUID();
     }
 
     public UUID getUuid() {

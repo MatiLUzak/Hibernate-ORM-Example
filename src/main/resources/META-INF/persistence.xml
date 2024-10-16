@@ -7,6 +7,7 @@
 
     <persistence-unit name="POSTGRES_RENT_PU" transaction-type="RESOURCE_LOCAL">
         <!-- Klasy encji zostaną dodane tutaj później -->
+        <class>org.example.model.Wypozyczajacy</class>
         <class>org.example.model.TypWypozyczajacy</class>
         <class>org.example.model.Uczen</class>
         <class>org.example.model.Nauczyciel</class>
@@ -16,7 +17,6 @@
         <class>org.example.model.Czasopismo</class>
         <class>org.example.model.Naukowa</class>
         <class>org.example.model.Wolumin</class>
-        <class>org.example.model.Wypozyczajacy</class>
         <class>org.example.model.Wypozyczenie</class>
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/nbddb"/>

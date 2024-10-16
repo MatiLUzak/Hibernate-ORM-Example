@@ -39,7 +39,7 @@ public class Wypozyczenie extends AbstractEntity{
         this.wypozyczajacy = wypozyczajacy;
         this.wolumin = wolumin;
         this.dataOd = LocalDateTime.now();  // Ustawienie daty początkowej na teraz
-        this.uuid = UUID.randomUUID();  // Generowanie UUID
+        //this.uuid = UUID.randomUUID();  // Generowanie UUID
     }
 
     // Gettery
