@@ -10,11 +10,11 @@ import java.util.UUID;
 public class Wypozyczenie extends AbstractEntity{
 
 
-    @ManyToOne // Relacja wiele do jednego z Wypozyczajacy
+    @ManyToOne
     @JoinColumn(name = "wypozyczajacy_id", nullable = false)
     private Wypozyczajacy wypozyczajacy;
 
-    @ManyToOne // Relacja wiele do jednego z Wolumin
+    @ManyToOne
     @JoinColumn(name = "wolumin_id", nullable = false)
     private Wolumin wolumin;
 
@@ -35,11 +35,9 @@ public class Wypozyczenie extends AbstractEntity{
         }
         this.wypozyczajacy = wypozyczajacy;
         this.wolumin = wolumin;
-        this.dataOd = LocalDateTime.now();  // Ustawienie daty początkowej na teraz
+        this.dataOd = LocalDateTime.now();
         //this.uuid = UUID.randomUUID();  // Generowanie UUID
     }
-
-    // Gettery
     public Wypozyczajacy getWypozyczajacy() {
         return wypozyczajacy;
     }
@@ -63,8 +61,6 @@ public class Wypozyczenie extends AbstractEntity{
     public void setDataDo(LocalDateTime dataDo) {
         this.dataDo = dataDo;
     }
-
-    // Settery z walidacją
     public void setWypozyczajacy(Wypozyczajacy wypozyczajacy) {
         if (wypozyczajacy == null) {
             throw new WypozyczenieException("Błędny wypożyczający");
@@ -78,13 +74,9 @@ public class Wypozyczenie extends AbstractEntity{
         }
         this.wolumin = wolumin;
     }
-
-    // Zakończenie wypożyczenia - ustawienie daty zwrotu
     public void koniecWypozyczenia() {
         this.dataDo = LocalDateTime.now();
     }
-
-    // Obliczanie długości wypożyczenia w dniach
     public double dlugoscWypozyczenia() {
         if (dataDo == null) {
             return 0;
@@ -92,8 +84,6 @@ public class Wypozyczenie extends AbstractEntity{
         Duration duration = Duration.between(dataOd, dataDo);
         return (double) duration.toDays();
     }
-
-    // Obliczanie kary na podstawie długości wypożyczenia
     public double obliczKare() {
         return wypozyczajacy.getTypWypozyczajacy().getKara() * dlugoscWypozyczenia();
     }

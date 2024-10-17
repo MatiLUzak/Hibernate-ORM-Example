@@ -17,4 +17,8 @@ public abstract class AbstractEntity {
     public UUID getId() {
         return id;
     }
+
+    public long getVersion() {
+        return version;
+    }
 }

@@ -35,7 +35,6 @@ public class ZarzadcaWypozyczajacy {
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();
         try {
-            // Pobierz wypożyczającego z blokadą pesymistyczną
             Wypozyczajacy wypozyczajacy = repozytorium.znajdzIZamknijPoId(id);
             if (wypozyczajacy == null) {
                 transaction.rollback();

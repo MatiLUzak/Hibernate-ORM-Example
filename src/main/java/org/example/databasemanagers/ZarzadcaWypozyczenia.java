@@ -40,13 +40,12 @@ public class ZarzadcaWypozyczenia {
                 transaction.rollback();
                 throw new RepozytoriumException("Nie znaleziono wypożyczenia");
             }
-            repozytorium.usun(wypozyczenie); // Usuwa wypożyczenie z bazy danych
+            repozytorium.usun(wypozyczenie);
             transaction.commit();
         } catch (PessimisticLockException ple) {
             transaction.rollback();
             throw new RepozytoriumException("Nie można uzyskać blokady na wypożyczenie", ple);
         } catch (RepozytoriumException e) {
-            // Rzucamy ponownie, aby zachować oryginalny komunikat
             throw e;
         } catch (Exception e) {
             transaction.rollback();

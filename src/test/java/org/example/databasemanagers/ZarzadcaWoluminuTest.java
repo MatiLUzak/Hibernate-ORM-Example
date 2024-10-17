@@ -37,7 +37,6 @@ class ZarzadcaWoluminuTest {
         woluminRepo = new WoluminDatabaseRepository(em);
         zarzadca = new ZarzadcaWoluminu(woluminRepo, em);
 
-        // Clean up data before each test
         em.getTransaction().begin();
         em.createQuery("DELETE FROM Wypozyczenie").executeUpdate();
         em.createQuery("DELETE FROM Wolumin").executeUpdate();
@@ -54,13 +53,10 @@ class ZarzadcaWoluminuTest {
 
     @Test
     void testDodajWolumin() {
-        // Arrange
         Wolumin wolumin = new Wolumin("Wydawnictwo ABC", "Polski", "Tytuł XYZ");
 
-        // Act
         zarzadca.dodajWolumin(wolumin);
 
-        // Assert
         Wolumin retrieved = woluminRepo.znajdzPoId(wolumin.getId());
         assertNotNull(retrieved);
         assertEquals(wolumin.getId(), retrieved.getId());
@@ -68,18 +64,14 @@ class ZarzadcaWoluminuTest {
 
     @Test
     void testUsunWolumin() {
-        // Arrange
         Wolumin wolumin = new Wolumin("Wydawnictwo DEF", "Angielski", "Tytuł LMN");
 
-        // Dodaj wolumin
         zarzadca.dodajWolumin(wolumin);
 
         UUID woluminId = wolumin.getId();
 
-        // Act
         zarzadca.usunWolumin(woluminId);
 
-        // Assert
         Wolumin retrieved = woluminRepo.znajdzPoId(woluminId);
         assertNull(retrieved);
     }
@@ -97,19 +89,15 @@ class ZarzadcaWoluminuTest {
 
     @Test
     void testPessimisticLocking() throws InterruptedException {
-        // Arrange
         Wolumin wolumin = new Wolumin("Wydawnictwo GHI", "Niemiecki", "Tytuł OPQ");
 
-        // Dodaj wolumin
         zarzadca.dodajWolumin(wolumin);
 
         UUID woluminId = wolumin.getId();
 
-        // Begin transaction and lock the entity
         em.getTransaction().begin();
         Wolumin lockedWolumin = woluminRepo.znajdzIZamknijPoId(woluminId);
 
-        // Set up a separate thread to simulate concurrent access
         Thread thread = new Thread(() -> {
             EntityManager em2 = emf.createEntityManager();
             WoluminDatabaseRepository repo2 = new WoluminDatabaseRepository(em2);
@@ -118,7 +106,6 @@ class ZarzadcaWoluminuTest {
             try {
                 zarzadca2.usunWolumin(woluminId);
             } catch (RepozytoriumException e) {
-                // Oczekujemy wyjątku z powodu blokady pesymistycznej
                 assertTrue(e.getMessage().contains("Nie można uzyskać blokady na wolumin"));
             } finally {
                 if (em2.isOpen()) {
@@ -127,19 +114,14 @@ class ZarzadcaWoluminuTest {
             }
         });
 
-        // Start the other thread
         thread.start();
 
-        // Wait to ensure the other thread attempts to acquire the lock
         Thread.sleep(1000);
 
-        // Release the lock
         em.getTransaction().commit();
 
-        // Wait for the other thread to finish
         thread.join();
 
-        // Verify that the entity still exists (since the other thread couldn't delete it)
         Wolumin retrieved = woluminRepo.znajdzPoId(woluminId);
         assertNotNull(retrieved);
     }
