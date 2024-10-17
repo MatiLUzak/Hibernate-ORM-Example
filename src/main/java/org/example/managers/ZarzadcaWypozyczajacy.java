@@ -1,4 +1,4 @@
-package org.example.managers;
+/*package org.example.managers;
 
 import org.example.model.Wypozyczajacy;
 import org.example.repositories.RepozytoriumWypozyczajacy;
@@ -19,4 +19,4 @@ public class ZarzadcaWypozyczajacy {
         repozytorium.dodajDoHistoryczni(wypozyczajacy);
         repozytorium.usun(wypozyczajacy);
     }
-}
+}*/

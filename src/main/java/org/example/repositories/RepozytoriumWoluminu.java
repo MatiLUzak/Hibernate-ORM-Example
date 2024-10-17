@@ -1,4 +1,4 @@
-package org.example.repositories;
+/*package org.example.repositories;
 
 import org.example.model.Wolumin;
 import org.example.exceptions.RepozytoriumException;
@@ -21,4 +21,4 @@ public class RepozytoriumWoluminu extends Repozytorium<Wolumin> {
     public List<Wolumin> getHistorycznyWolumin() {
         return new ArrayList<>(historycznyWolumin);
     }
-}
+}*/

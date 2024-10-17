@@ -9,9 +9,6 @@ import java.util.UUID;
 @Entity
 public class Wypozyczajacy extends AbstractEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID uuid;
 
     @ManyToOne
     @JoinColumn(name = "typ_wypozyczajacy_id", nullable = false)
@@ -45,9 +42,6 @@ public class Wypozyczajacy extends AbstractEntity {
         //this.uuid = UUID.randomUUID();
     }
 
-    public UUID getUuid() {
-        return uuid;
-    }
 
     public TypWypozyczajacy getTypWypozyczajacy() {
         return typWypozyczajacy;

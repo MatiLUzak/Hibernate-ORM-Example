@@ -1,4 +1,4 @@
-package org.example.managers;
+/*package org.example.managers;
 
 import org.example.model.Wypozyczenie;
 import org.example.repositories.RepozytoriumWypozyczenia;
@@ -37,4 +37,4 @@ public class ZarzadcaWypozyczenia {
         System.out.println("Wypożyczenie nie jest w historii wypożyczeń!");
         return -1;
     }
-}
+}*/

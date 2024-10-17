@@ -9,9 +9,6 @@ import java.util.UUID;
 @Entity
 public class Wypozyczenie extends AbstractEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID uuid;
 
     @ManyToOne // Relacja wiele do jednego z Wypozyczajacy
     @JoinColumn(name = "wypozyczajacy_id", nullable = false)
@@ -57,10 +54,6 @@ public class Wypozyczenie extends AbstractEntity{
 
     public LocalDateTime getDataDo() {
         return dataDo;
-    }
-
-    public UUID getUuid() {
-        return uuid;
     }
 
     // Settery z walidacją

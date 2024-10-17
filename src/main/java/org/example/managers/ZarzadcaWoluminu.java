@@ -1,4 +1,4 @@
-package org.example.managers;
+/*package org.example.managers;
 
 import org.example.model.Wolumin;
 import org.example.repositories.RepozytoriumWoluminu;
@@ -19,4 +19,4 @@ public class ZarzadcaWoluminu {
         repozytorium.dodajDoHistorycznych(wolumin);
         repozytorium.usun(wolumin);
     }
-}
+}*/

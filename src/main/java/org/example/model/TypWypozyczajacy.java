@@ -7,9 +7,6 @@ import org.example.exceptions.WypozyczajacyException;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class TypWypozyczajacy extends AbstractEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     @Column(name="kara",nullable = false)
     private double kara;
     @Column(name="max_dl_wypoz",nullable = false)

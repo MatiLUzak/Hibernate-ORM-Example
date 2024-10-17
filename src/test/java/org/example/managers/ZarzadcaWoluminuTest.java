@@ -1,4 +1,4 @@
-package org.example.managers;
+/*package org.example.managers;
 
 import org.example.exceptions.RepozytoriumException;
 import org.example.model.Naukowa;
@@ -61,4 +61,4 @@ class ZarzadcaWoluminuTest {
         assertThrows(RepozytoriumException.class, () -> zarzadca.dodajWolumin(null));
         assertThrows(RepozytoriumException.class, () -> zarzadca.usunWolumin(null));
     }
-}
+}*/

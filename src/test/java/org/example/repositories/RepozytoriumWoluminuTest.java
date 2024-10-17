@@ -1,4 +1,4 @@
-package org.example.repositories;
+/*package org.example.repositories;
 
 import org.example.model.Beletrystyka;
 import org.example.model.Wolumin;
@@ -22,4 +22,4 @@ class RepozytoriumWoluminuTest {
 
         assertEquals(1, repo.getHistorycznyWolumin().size());
     }
-}
+}*/

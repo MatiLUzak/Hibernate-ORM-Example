@@ -1,4 +1,4 @@
-package org.example.repositories;
+/*package org.example.repositories;
 
 import org.example.model.Wypozyczenie;
 import org.example.exceptions.RepozytoriumException;
@@ -27,4 +27,4 @@ public class RepozytoriumWypozyczenia extends Repozytorium<Wypozyczenie> {
     public List<Wypozyczenie> getHistoryczneWypoz() {
         return new ArrayList<>(historyczneWypozyczenia);
     }
-}
+}*/
