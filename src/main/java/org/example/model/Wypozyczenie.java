@@ -56,6 +56,14 @@ public class Wypozyczenie extends AbstractEntity{
         return dataDo;
     }
 
+    public void setDataOd(LocalDateTime dataOd) {
+        this.dataOd = dataOd;
+    }
+
+    public void setDataDo(LocalDateTime dataDo) {
+        this.dataDo = dataDo;
+    }
+
     // Settery z walidacją
     public void setWypozyczajacy(Wypozyczajacy wypozyczajacy) {
         if (wypozyczajacy == null) {
