@@ -39,9 +39,11 @@ class ZarzadcaWoluminuTest {
 
         // Clean up data before each test
         em.getTransaction().begin();
+        em.createQuery("DELETE FROM Wypozyczenie").executeUpdate();
         em.createQuery("DELETE FROM Wolumin").executeUpdate();
         em.getTransaction().commit();
     }
+
 
     @AfterEach
     void tearDown() {

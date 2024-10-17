@@ -41,10 +41,12 @@ class ZarzadcaWypozyczajacyTest {
 
         // Clean up data before each test
         em.getTransaction().begin();
+        em.createQuery("DELETE FROM Wypozyczenie").executeUpdate();
         em.createQuery("DELETE FROM Wypozyczajacy").executeUpdate();
         em.createQuery("DELETE FROM TypWypozyczajacy").executeUpdate();
         em.getTransaction().commit();
     }
+
 
     @AfterEach
     void tearDown() {
